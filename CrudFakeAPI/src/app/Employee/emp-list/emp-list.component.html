@@ -1,0 +1,25 @@
+<div class="row mt-5 justify-content-center">
+  <div class="col-md-8">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>SL No</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Email</th>
+          <th colspan="2" >Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let emp of empLists'>
+          <td>{{emp.id}}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.age }}</td>
+          <td>{{ emp.email }}</td>
+          <td class="text-center"><button class="btn btn-sm btn-danger" (click)='deleteEmp( emp.id )'>Delete</button></td>
+          <td class="text-center"><button class="btn btn-sm btn-primary" (click)='editEmployee(emp)'>Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
