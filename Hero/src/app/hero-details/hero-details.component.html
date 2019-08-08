@@ -1,0 +1,7 @@
+<div *ngIf='hero'>
+  <div class="bg-secondary p-3">
+    <h5>ID: {{hero.id}}</h5>
+    <h3>Name: {{hero.name}}</h3>
+    <input type="text" class="form-control" [(ngModel)] = 'hero.name' >
+  </div>
+</div> 
