@@ -1,0 +1,17 @@
+.calculator{
+    margin-top: 20%;
+}
+.customBtn1{
+    width: 46%;
+}
+.customBtn2{
+    width: 22%;
+}
+.customForm{
+    width: 94%;
+}
+.customBtn3{
+    width: 95%;
+    color: #ffffff !important;
+    font-weight: 400;
+}

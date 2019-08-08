@@ -1,0 +1,33 @@
+
+
+
+
+
+<div class="row">
+  <div class="offset-md-4 col-md-4">
+    <div class="calculator">
+      <h1 class="display-4 text-center">Calculator.....</h1><br>
+
+
+      
+        <div class="form-group">
+          <input type="email" class="form-control customForm" id="email" readonly 
+          value="{{ result }}">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-danger customBtn1 mr-2" *ngFor="let lngBtn of longBtn" (click)='addExpression(lngBtn)'>
+            {{ lngBtn }}
+          </button>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success mr-2 mb-2 customBtn2" *ngFor="let srtBtn of shortBtn" (click)='addExpression(srtBtn)'>
+            {{ srtBtn }}
+          </button>
+        </div>
+        <div class="form-group">
+          <a class="btn btn-danger btn-block customBtn3">History</a>
+        </div>
+
+    </div>
+  </div>
+</div>
