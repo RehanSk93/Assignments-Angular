@@ -1,0 +1,14 @@
+<div class="container">
+    
+    <!-- Step - 8 (Next step - app.component.ts) -->
+    <!-- (#event) will give us required information as form of Object about the (serverCreated) -->
+    <app-cockpit (serverCreated)="onServerAdded($event)" ></app-cockpit>
+    
+
+    <!-- Step - 11 (Next step - server.component.ts) -->
+    <!-- Here we use ngFor loop to fetch all data and store inside child component property that is element -->
+    <app-server *ngFor='let serverElement of serverElements'
+     [element]='serverElement'></app-server>
+
+</div>
+

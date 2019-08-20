@@ -1,0 +1,51 @@
+<!-- Step - 1 -->
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <div class="row mt-5">
+                <div class="col-md-12">
+    
+                    <div class="form-group">
+                        <label for="">Server Name</label>
+                        <!-- Step - 2 -->
+                        <input type="text" 
+                        class="form-control"
+                        name="name"
+                        autocomplete="off"
+                        [(ngModel)]='newServerName'>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="">Server Content</label>
+                        <!-- Step - 3 -->
+                        <input type="text" 
+                        class="form-control"
+                        name="content"
+                        autocomplete="off"
+                        [(ngModel)]='newServerContent'>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Step - 4 (Next step - cockpit.component.ts file) -->
+                    <button class="btn btn-success mr-2" 
+                    (click)='onAddServer()'>Add Server</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+
+
+  <!-- Note:  -->
+  <!-- 
+    1. We can access input field data using two way data binding
+            ex- [(ngModel)]='newServerContent'
+    2. We can access input field dada using local references
+            ex- #serverName
+    3. We can access input field dada using @ViewChild() method 
+            ex @ViewChild('newServerContent') newServerContent: ElementRef;
+                    this.newServerContent.nativeElement.value       
+  -->
