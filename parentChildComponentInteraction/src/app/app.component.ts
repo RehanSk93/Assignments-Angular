@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   // Step - 9
+  // Create an array of Object to store user data
   serverElements = [
     // Initially pass two values..
     { type: 'server', name: 'Test Server one', content: 'Test server Content' },
