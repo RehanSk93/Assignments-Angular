@@ -1,0 +1,64 @@
+src Folder
+ |- app
+    |
+    |- header	
+    |  	|- header.component.css
+    |  	|- header.component.html
+    |  	|- header.component.ts
+    |
+    |
+    |- recipes	
+    |   |- recipe-details
+    |   |   |- recipe-details.component.css
+    |   |   |- recipe-details.component.html
+    |   |   |- recipe-details.component.ts
+    |   |
+    |   |- recipe-list	
+    |   |   |- recipe-list.css
+    |   |   |- recipe-list.html
+    |   |   |- recipe-list.ts
+    |   |   |
+    |   |   |- recipe-item	
+    |   |       |- recipe-item.css
+    |   |       |- recipe-item.html
+    |   |       |- recipe-item.ts  
+    |- recipes.component.css
+    |- recipes.component.html
+    |- recipes.component.ts
+    |- recipe.model.ts
+    |
+    |
+    |- shopping-list
+    |   |- shopping-edit
+    |   |   |- shopping-edit.component.css
+    |   |   |- shopping-edit.component.html
+    |   |   |- shopping-edit.component.ts
+    |- shopping-list.component.css    
+    |- shopping-list.component.html
+    |- shopping-list.component.ts
+    |
+    |
+    |- shared
+    |   |- ingredient.model.ts
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+
+
+
+
+
+
+
+
