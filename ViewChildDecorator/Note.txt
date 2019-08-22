@@ -1,0 +1,4 @@
+@ Using @ViewChild decorator we can access form field element
+@ Using referance variable 
+@ Store data inside an array
+@ Using push method

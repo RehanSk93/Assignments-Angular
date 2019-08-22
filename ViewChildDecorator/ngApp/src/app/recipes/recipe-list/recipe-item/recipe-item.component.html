@@ -1,0 +1,13 @@
+
+
+<li class="list-group-item mb-2" 
+    style="cursor: pointer" 
+    (click)='onSelected()'>
+  <div class="media">
+    <div class="media-body">
+      <h4>{{ recipe.name }}</h4>
+      <p>{{ recipe.description }}</p>
+    </div>
+    <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="ml-1 mt-1 rounded-circle" style="width:100px;">
+  </div>
+</li>
