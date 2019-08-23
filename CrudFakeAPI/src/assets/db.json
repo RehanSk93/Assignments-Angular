@@ -3,26 +3,20 @@
     {
       "id": 1,
       "name": "Mughla Azam",
-      "age": "27",
+      "age": 28,
       "email": "m@m.com"
-    },
-    {
-      "id": 2,
-      "name": "Rehan Sk",
-      "age": "27",
-      "email": "a@a.com"
     },
     {
       "id": 3,
       "name": "Rehan Sk",
-      "age": 29,
+      "age": 30,
       "email": "a@a.com"
     },
     {
-      "id": 4,
-      "name": "Subhasis",
-      "age": 34,
-      "email": "s@s.com"
+      "id": 5,
+      "name": "Manash",
+      "age": 24,
+      "email": "manash@gmail.com"
     }
   ]
 }

@@ -32,7 +32,6 @@ export class CalculatorComponent implements OnInit {
     }else{
       this.result += value;
     }
-    
   }
 
   constructor() { }
