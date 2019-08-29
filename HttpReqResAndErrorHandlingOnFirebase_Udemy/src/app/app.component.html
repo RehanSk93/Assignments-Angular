@@ -1,0 +1,64 @@
+<div class="container">
+  <!-- submit form using (ngSubmit)  -->
+  <form #formDetails='ngForm' (ngSubmit)='onSubmit(formDetails.value)'>
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-8">
+        <div class="form-group">
+          <label for="">Title</label>
+          <input type="text" class="form-control" name="title" ngModel required>
+        </div>
+        <div class="form-group">
+          <label for="">Content</label>
+          <input type="text" class="form-control" name="content" ngModel required>
+        </div>
+        <button class="btn btn-success btn-sm" type="submit">Send Post</button>
+      </div>
+    </div>
+  </form>
+
+
+  <hr>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+        <button class="btn btn-primary btn-sm" (click) = 'onFetchPost()'>Fetch Post</button> |
+        <button class="btn btn-danger btn-sm" 
+                (click) = 'OnClearPosts()'
+                [disabled] = "PostData.length < 1">
+                Clear Post
+        </button>
+    </div>
+  </div>
+  <hr>
+
+
+  <!-- Showing all post data here -->
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+
+      <!-- First check post is available or not -->
+      <p *ngIf='PostData.length < 1 && !isFetching'>No post available</p>
+
+      <!-- Showing loading message when data fetching -->
+      <p *ngIf='isFetching && !errorMessage'>Loading...</p>
+
+      <!-- If data available show this list group -->
+      <ul class="list-group" *ngIf='PostData.length >= 1 && !isFetching'>
+        <li class="list-group-item mb-3" *ngFor='let post of PostData'>
+          <h5>{{ post.title }} | <span style="font-size: 12px;">{{ post.content }}</span></h5>
+        </li>
+      </ul>
+
+
+      <!-- Error handling -->
+      <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf = 'errorMessage'>
+          <strong>An Error Occurred!</strong>
+          <p>{{ errorMessage }}</p>
+          <button type="button" (click) = 'onHandleError()' class="close" 
+          data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+    </div>
+  </div>
+</div>
