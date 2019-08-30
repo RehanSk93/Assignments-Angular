@@ -1,0 +1,60 @@
+<div class="row mt-5 justify-content-center">
+  <div class="col-md-6">
+    
+    <!-- Showing CSS Spinner when data is fetching -->
+    <div *ngIf='isLoading' style="text-align: center">
+      <app-css-loader></app-css-loader>
+    </div>
+
+    <!-- Showing error message if error is occurred -->
+    <div class="alert alert-danger" *ngIf='errorMsg'>
+      <p class="mb-0">{{ errorMsg }}</p>
+    </div>
+
+    <!-- Create a template reference variable to access the form -->
+    <form #authForm = 'ngForm' (ngSubmit) = 'onSubmit(authForm)' *ngIf='!isLoading'>
+
+    <!-- Email Field............................... -->
+    <div class="form-group">
+      <label for="">Email</label>
+      <!-- See all validators like required & email -->
+      <input
+          type="text"
+          class="form-control"
+          ngModel
+          name="email"
+          required
+          email>
+    </div>
+
+    <!-- Password field.............. -->
+    <div class="form-group">
+      <label for="">Password</label>
+      <input 
+          type="password" 
+          class="form-control"
+          ngModel
+          name="password"
+          required
+          minlength="4">
+    </div>
+
+
+    <!-- Toggling User submit button -->
+    <div class="mt-4">
+      <button class="btn  
+              btn-success" 
+              type="submit"
+              [disabled] = '!authForm.valid'
+              >
+        {{ isLoginMode ? 'Login' : 'Sign Up' }}
+      </button>
+      |
+      <button class="btn  btn-warning" type="button"
+      (click) = 'onSwitchMode()'>
+        Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
+      </button>
+    </div>
+  </form>
+  </div>
+</div>
