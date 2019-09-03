@@ -1,0 +1,25 @@
+<div class="row mt-3">
+  <div class="col-md-12">
+    <h4>Welcome to Server page...</h4>
+    <p>Manage your server and user</p>
+    <button class="btn btn-warning" (click)="onReload()">Reload Page</button>
+  </div>
+</div>
+
+
+<div class="row mt-3">
+  <div class="col-md-4">
+    <ul class="list-group">
+      <li class="list-group-item"  *ngFor="let server of servers">
+          <a [routerLink]="['/servers', server.id, 'edit']"
+             [queryParams]="{allowEdit: '1'}"
+             fragment="loading">
+              {{ server.name }}
+            </a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-3">
+    <app-edit-server></app-edit-server>
+  </div>
+</div>

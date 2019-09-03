@@ -1,0 +1,50 @@
+<div class="container">
+
+  <ul class="nav nav-tabs mt-2">
+    <li class="nav-item">
+      <!-- routerLink is a special directive it act as href attribute in HTML  -->
+      <!-- routerLink is use to navigate one page to another page -->
+      <!-- [routerLinkActiveOptions]="{exact: true}" => If the exact path is match then only active class will apply  -->
+      <a class="nav-link" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" routerLink='/'>
+        Home
+      </a>
+    </li>
+ 
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive='active' routerLink='/servers'>Servers</a>
+      <!-- Or we can use absolute path  -->
+      <!-- <a class="nav-link" routerLink='servers'>Servers</a> -->
+    </li>
+
+    <li class="nav-item">
+      <!-- Another way to use routerLink as property binding and then pass the multiple value inside the array -->
+      <!-- When we pass more difficult path we can use property binding -->
+      <a class="nav-link" routerLinkActive='active' [routerLink]="['users']">Users</a>
+    </li>
+  </ul>
+
+  <div class="row">
+    <div class="col-md-12">
+      <!-- this is a special directives in routing module  -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<!-- 
+  Note:-
+    @ Two type of path is there
+        - absolute path (with '/' )
+        - relative path (without '/' )
+
+    @ All important Directives
+        - routerLink
+        - routerLinkActive
+        - [routerLinkActiveOptions]="{exact: true}"
+              => This is basically tell Angular if the exact full path is match then only apply 'active' class.
+        
+        - [queryParams]="{allowEdit: '1'}"
+        - fragment="loading"
+
+        
+-->
