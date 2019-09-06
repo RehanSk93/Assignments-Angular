@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators'
+
 import { from, Subscription } from 'rxjs';
 import { Post } from './post.model';
 import { PostService } from './post.service';
@@ -24,15 +24,15 @@ export class AppComponent implements OnInit, OnDestroy {
   // destroy error message after task complete
   private errorSub: Subscription;
 
-  constructor(private http: HttpClient, 
+  constructor(private http: HttpClient,
               private postService: PostService) {}
 
   ngOnInit() {
     // showing error if available
     this.errorSub = this.postService.errorMsg.subscribe(errorRes => {
         this.errorMessage = errorRes;
-    })
-    
+    });
+
     this.isFetching = true;
     this.postService.fetchPosts().subscribe(
       // Handling response...
@@ -47,13 +47,13 @@ export class AppComponent implements OnInit, OnDestroy {
       this.errorMessage = error.message;
       console.log(error);
     }
-    )
+    );
   }
 
 
   // Submit form details to database
   onSubmit(formData: {title: string, content: string}) {
-    this.postService.createAndStorePost(formData.title, formData.content)
+    this.postService.createAndStorePost(formData.title, formData.content);
   }
 
 
@@ -64,7 +64,7 @@ export class AppComponent implements OnInit, OnDestroy {
       result => {
       // now here 'responseData' is array of 'responseData'
       this.isFetching = false;
-      this.PostData = result; 
+      this.PostData = result;
     },
     // Handling error if Occurred..
       error => {
@@ -73,7 +73,7 @@ export class AppComponent implements OnInit, OnDestroy {
         this.errorMessage = error.message;
         console.log(error);
       }
-    )
+    );
   }
 
 
@@ -82,7 +82,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.postService.deletePosts()
         .subscribe( () => {
           this.PostData = [];
-        })
+        });
   }
 
 
