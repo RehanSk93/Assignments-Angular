@@ -27,5 +27,9 @@ export class AddServerComponent implements OnInit {
     }
     // transfer data to service page through dependency injection
     this.postService.addPost(form.value.title, form.value.content);
+
+    // after adding content, reset the form
+    form.reset();
+
     }
 }
