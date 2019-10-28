@@ -20,12 +20,12 @@ export class AppComponent {
   // Step - 10 ( Next step - app.component.html )
   // Here we will received those data and store it inside a variable
   // we can also define type of object to expect data in this way
-  onServerAdded(serverData: {serverName: string, serverContent: string}){
+  onServerAdded(serverData: {serverName: string, serverContent: string}) {
     this.serverElements.push({
       type: 'server',
       name: serverData.serverName,
       content: serverData.serverContent
-    })
+    });
   }
 
 }

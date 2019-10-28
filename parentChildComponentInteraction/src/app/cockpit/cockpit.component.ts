@@ -27,7 +27,7 @@ export class CockpitComponent implements OnInit {
   // first store data inside those variable help of two way data binding
   // then emit the value into serverCreated variable and pass to parent ~
   // ~ component with the help of @Output decorator
-  onAddServer(){
+  onAddServer() {
     this.serverCreated.emit({
       serverName: this.newServerName,
       serverContent: this.newServerContent
