@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-3">
+    <div class="list-group" *ngFor="let emp of employeeList">
+      <a class="list-group-item list-group-item-action" [routerLink]="['/employee-list', emp.id]">{{ emp.name }}</a>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <button type="button" class="btn btn-primary btn-lg btn-block mb-5"
+      (click)="showFormFiled()">{{addForm === false ? 'Create New' : 'Show Employee Details'}}</button>
+
+
+
+    <div *ngIf="addForm">
+      <form #newForm="ngForm" (ngSubmit)="onSubmitForm(newForm.value)">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name" ngModel name="name">
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" id="age" aria-describedby="emailHelp" placeholder="Enter age" ngModel name="age">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" ngModel name="email">
+        </div>
+
+        <div class="form-group">
+          <label for="power">Position</label>
+          <select class="form-control" id="power" required ngModel name="position">
+            <option *ngFor="let position of positions" [value]="position" >{{position}}</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+
+
+    <router-outlet *ngIf="!addForm"></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+{
+  "Employee": [
+    {
+      "name": "Rehan Sk",
+      "age": "27",
+      "email": "a@a.com",
+      "position": "UI Developer",
+      "id": 1
+    },
+    {
+      "name": "Souman Das",
+      "age": 291,
+      "email": "b@a.com",
+      "position": "Java Developer",
+      "id": 2
+    },
+    {
+      "name": "Susmita Das",
+      "age": 29,
+      "email": "c@a.com",
+      "position": "React Developer",
+      "id": 3
+    },
+    {
+      "name": "Ripon Das",
+      "age": 20,
+      "email": "e@a.com",
+      "position": "React Developer",
+      "id": 5
+    },
+    {
+      "name": "rehan",
+      "age": "10",
+      "email": "re@gmail.com",
+      "position": "React Developer",
+      "id": 7
+    },
+    {
+      "name": "Faisal Sk",
+      "age": 32,
+      "email": "b@a.com",
+      "position": "Java Developer",
+      "id": 8
+    }
+  ]
+}
