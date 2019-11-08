@@ -11,13 +11,14 @@ import { from } from 'rxjs';
 })
 export class EmpListComponent implements OnInit {
 
-  private empLists: Employee[];
+  public empLists: Employee[];
 
   constructor(private employeeService: EmployeeService,
-    private router: Router) { }
+              private router: Router
+    ) { }
 
   ngOnInit() {
-    this.getEmployee()
+    this.getEmployee();
   }
 
   getEmployee() {
@@ -25,27 +26,27 @@ export class EmpListComponent implements OnInit {
       (res) => {
         this.empLists = res;
       }
-    )
+    );
   }
 
 
   deleteEmp(id: number) {
     this.employeeService.deleteEmp(id).subscribe(
       result => {
-        if(result){
-         console.log(result)
+        if (result) {
+         console.log(result);
         }
       },
-      error =>{
-        if (error){
-          console.log(error)
+      error => {
+        if (error) {
+          console.log(error);
         }
       }
-    )
+    );
   }
 
   editEmployee(emp) {
-    this.employeeService.currentEmployee = Object.assign({}, emp)
+    this.employeeService.currentEmployee = Object.assign({}, emp);
     this.router.navigate(['/create']);
   }
 

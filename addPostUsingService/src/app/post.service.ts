@@ -19,7 +19,7 @@ export class PostService {
 
   // add post inside this array
   addPost(title: string, content: string) {
-    const post: Post = { title: title, content: content };
+    const post: Post = { title, content };
     this.posts.push(post);
   }
 }
